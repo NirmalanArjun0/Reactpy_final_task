@@ -27,7 +27,7 @@ try:
 except Exception as e:
     print(e)
 
-# Define a component for your application
+# Define a component for application
 @component
 def MyCrud():
     # Creating state for various form fields and elements
@@ -54,7 +54,7 @@ def MyCrud():
         nonlocal generated_otp
         generated_otp = str(random.randint(1000, 9999))  # Generate a 4-digit OTP
 
-        # Send the OTP via email (you'll need to set up your email server details)
+        # Send the OTP via email 
         sender_email = "your_email@gmail.com"
         sender_password = "your_email_password"
         recipient_email = Email.value
@@ -68,7 +68,7 @@ def MyCrud():
             server.sendmail(sender_email, recipient_email, f"Subject: {subject}\n\n{message}")
             server.quit()
             print("OTP sent successfully.")
-            set_otp_input("")  # Clear the OTP input field after sending
+            set_otp_input("")  
         except Exception as e:
             print(f"Failed to send OTP: {e}")
 
@@ -77,7 +77,7 @@ def MyCrud():
 
         if entered_otp == generated_otp:
             print("OTP verified successfully.")
-            # Implement your logic to create an account or log in here
+            # create an account or log in here
         else:
             print("Invalid OTP. Please try again.")
 
@@ -94,7 +94,7 @@ def MyCrud():
         alltodo.set_value(alltodo.value + [newtodo])
 
         if save_password:
-            # Implement saving password logic here if checked
+            # Implement saving password logic if checked
             pass
 
         # Login or create account logic here
@@ -108,7 +108,7 @@ def MyCrud():
         pass
 
     def forgot_password():
-        # Implement forgot password logic here
+        
         print("Forgot Password: Email entered -", forgot_password_email)
 
     return html.div(
@@ -351,11 +351,11 @@ def MyCrud():
                     }
                 }),
             html.br(),
-            # Add "Done" button after Contact Number
+           
             html.button(
             {
                 "type": "button",
-                "on_click": lambda event: done_button_click(),  # Add the function you want to execute on button click
+                "on_click": lambda event: done_button_click(),  
                 "style": {
                     "font-family": "Time New Roman",
                     "font-size": "18px",
